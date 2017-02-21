@@ -5,6 +5,33 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    console.log('COLLECTION IN LIBRARY', this.collection);
+
+    this.collection.on('reset', function(model) {
+      this.render();
+      debugger;
+    }, this);
+  //   $.ajax({
+  // // This is the url you should use to communicate with the parse API server.
+  //     url: 'http://parse.sfm6.hackreactor.com/mytunes/classes/songs',
+  //     type: 'GET',
+  //     data: {},
+  //     contentType: 'application/json',
+  //     success: function (data) {
+  //       console.log('fetched');
+  //       debugger;
+  //       libraryViewContext.render();
+  //     },
+  //     error: function (data) {
+  //       // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+  //       console.error('errored out on fetch', data);
+  //       console.log('failed in library view');
+  //     }
+  //   });
+
+   // this.fetch();
+    
+
 
   },
 
@@ -20,22 +47,25 @@ var LibraryView = Backbone.View.extend({
     );
   },
 
-  fetch: function() {
+  /*fetch: function() {
+    debugger;
+    var libraryViewContext = this; 
     $.ajax({
   // This is the url you should use to communicate with the parse API server.
       url: 'http://parse.sfm6.hackreactor.com/mytunes/classes/songs',
       type: 'GET',
-      data: JSON.stringify(message),
+      data: {},
       contentType: 'application/json',
       success: function (data) {
-        console.log('fetched');
-        this.render();
+        console.log('fetched library here');
+        debugger;
+        libraryViewContext.render();
       },
       error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
         console.error('errored out on fetch', data);
+        console.log('failed in library view');
       }
     });
-  }
-
+  }*/
 });
