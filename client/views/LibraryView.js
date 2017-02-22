@@ -9,7 +9,7 @@ var LibraryView = Backbone.View.extend({
 
     this.collection.on('reset', function(model) {
       this.render();
-      debugger;
+      // debugger;
     }, this);
   //   $.ajax({
   // // This is the url you should use to communicate with the parse API server.
