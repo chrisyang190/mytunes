@@ -36,4 +36,14 @@ describe('SongQueueView', function() {
     expect(view.render).to.have.been.called;
   });
 
+  it('should have a header element after being rendered', function() {
+    view = new SongQueueView({ collection: fakeSongs });
+    view.collection.add({
+      artist: 'data',
+      url: '/test/testsong3.mp3',
+      title: 'test song 3'
+    });
+    expect(view.$el.children()[0].tagName).to.equal('TH');
+  });
+
 });
